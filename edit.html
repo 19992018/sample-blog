@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>EDIT| The Paragraph</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <header>
+    <div class="logo">
+      <h1><span>The</span> Paragraph</h1>
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="create.html">CREATE</a>
+      <a href="#">CONTACT</a>
+    </nav>
+  </header>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <h1><span>The</span> Paragraph</h1>
+        </div>
+        <nav>
+          <a href="index.html">HOME</a>
+          <a href="create.html">CREATE</a>
+          <a href="#">CONTACT</a>
+        </nav>
+      </header>
+      <form action="/edit/:id" method="post">
+        <h1 class="h1-editpg">Edit Post</h1>
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Edit Title"
+        /><br />
+        <label for="createPost"></label>
+        <textarea
+          placeholder="Rewrite Post"
+          id="content"
+          name="content"
+          style="height: 200px; width: 80%"
+        ></textarea
+        ><br />
+        <button type="submit">Update</button>
+      </form>
+
+      <%- include('../partials/footer'); %>
+    </div>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>

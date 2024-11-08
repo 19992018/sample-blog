@@ -5,16 +5,20 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const { Article } = require("./models/article.model.js");
 const bodyParser = require("body-parser");
+const path = require("path");
 const MONGO_URL = process.env.MONGO_URL;
 
 // const { urlencoded } = require("body-parser");
 
 const app = express();
 
-// set the view engine to ejs
+// Set view engine to EJS
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.set("views", path.join(__dirname, "views"));
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 // use res.render to load up an ejs view file
 
