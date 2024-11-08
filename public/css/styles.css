@@ -1,87 +1,98 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-body{
-  font-family:sans-serif;
+body {
+  font-family: sans-serif;
 }
 
-a, p, h1, h2, h3, h4, h5, h6{
+a, p, h1, h2, h3, h4, h5, h6 {
   color: #333;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h4, h5, h6 {
   padding: 10px 20px 10px 20px;
 }
 
+
 /*The div that encloses everything*/
-.container{
+.container {
   max-width: 900px;
   margin: auto;
   border-left: 1px solid #333;
   border-right: 1px solid #333;
 }
 
-header{
+header {
   background-color: #333;
+  display: flex;
+  justify-content: space-between;
 
 }
 
-header nav{
+header .logo h1 {
+  color: #fff;
+}
+
+header .logo h1 span {
+  color: blue;
+}
+
+header nav {
   display: flex;
   justify-content: center;
   align-content: center;
   padding: 20px;
 }
 
-header nav a{
-  padding:10px;
+header nav a {
+  padding: 10px;
   color: white;
   text-decoration: none;
 }
 
-header nav a:hover{
+header nav a:hover {
   color: cyan;
 }
 
-section{
+section {
   padding: 20px;
 }
 
-main{
+main {
   float: left;
   width: 70%;
 }
 
-main p{
+main p {
   font-size: 1.1rem;
   line-height: 1.6rem;
   padding: 0 20px 0 20px;
 }
 
-aside{
+aside {
   float: right;
   width: 25%;
 }
 
-aside p{
+aside p {
   font-size: 1.1rem;
   line-height: 1.6rem;
   padding: 20px;
 }
 
-aside ul{
+aside ul {
   padding: 0 20px 0 20px;
 }
 
-aside ul li{
+aside ul li {
   font-size: 1.1rem;
   line-height: 1.6rem;
   list-style: none;
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   background-color: #333;
@@ -91,18 +102,25 @@ footer{
   width: 100%;
 }
 
-footer p{
+footer p {
 
   color: white;
   padding: 0 10px 25px 10px;
 }
 
-footer a{
+footer a {
   color: white;
   padding: 0 10px 0 10px;
 
 }
 
-footer a:hover{
+footer a:hover {
   color: cyan;
+}
+
+/* Edit page */
+/* Added for testing and debugging purposes */
+
+.h1-editpg {
+  color: purple;
 }

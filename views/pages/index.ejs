@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/header'); %>
+
+      <main>
+        <ul>
+          <% articles.forEach(article => { %>
+          <h1>
+            <%= article.title %> <a href="/edit/<%= article._id %>">Edit</a>
+            <a href="/delete/<%= article._id %>">Delete</a>
+          </h1>
+          <p><%= article.content %></p>
+          <% }); %>
+        </ul>
+      </main>
+
+      <aside class="">
+        <h3>About</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
+          et, doloribus? Iure vitae quis officiis atque, alias vel id doloribus
+          nam delectus inventore. Sit doloremque quod alias? Nostrum, impedit,
+          reprehenderit!
+        </p>
+
+        <h3>Recent Posts</h3>
+        <ul>
+          <li><a href="#">Blog Post #5</a></li>
+          <li><a href="#">Blog Post #4</a></li>
+          <li><a href="#">Blog Post #3</a></li>
+          <li><a href="#">Blog Post #2</a></li>
+          <li><a href="#">Blog Post #1</a></li>
+        </ul>
+      </aside>
+
+      <%- include('../partials/footer'); %>
+    </div>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>

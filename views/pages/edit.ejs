@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/header'); %>
+      <form action="/edit/<%=article._id%>" method="post">
+        <h1 class="h1-editpg">Edit Post</h1>
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Edit Title"
+        /><br />
+        <label for="createPost"></label>
+        <textarea
+          placeholder="Rewrite Post"
+          id="content"
+          name="content"
+          style="height: 200px; width: 80%"
+        ></textarea
+        ><br />
+        <button type="submit">Update</button>
+      </form>
+
+      <%- include('../partials/footer'); %>
+    </div>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>
