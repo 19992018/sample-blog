@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const { Article } = require("./models/article.model.js");
 const bodyParser = require("body-parser");
 const path = require("path");
-const MONGO_URL = process.env.MONGO_URL;
+const MONGODB_URI = process.env.MONGO_URL;
 
 // const { urlencoded } = require("body-parser");
 
@@ -99,12 +99,16 @@ app.get("/delete/:id", async (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3000, () => {
-  console.log("app running on port 3000... Yeey!");
+// app.listen(3000, () => {
+//   console.log("app running on port 3000... Yeey!");
+// });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(MONGODB_URI)
   .then(() => {
     // app.listen(3000, () => {
     //   console.log("app running on port 3000... Yeey!");
