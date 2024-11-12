@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const { Article } = require("./models/article.model.js");
 const bodyParser = require("body-parser");
 const path = require("path");
-const db = process.env.MONGODB_URI;
+const db = process.env.MONGO_URI;
 const PORT = process.env.PORT || 3000;
 
 // const { urlencoded } = require("body-parser");
