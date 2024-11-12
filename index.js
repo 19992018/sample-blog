@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 const { Article } = require("./models/article.model.js");
 const bodyParser = require("body-parser");
 const path = require("path");
-const MONGODB_URI = process.env.MONGO_URL;
+const db = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3000;
 
 // const { urlencoded } = require("body-parser");
 
@@ -102,10 +103,6 @@ app.get("/delete/:id", async (req, res) => {
 // app.listen(3000, () => {
 //   console.log("app running on port 3000... Yeey!");
 // });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 // mongoose
 //   .connect(MONGODB_URI)
@@ -120,10 +117,16 @@ app.listen(PORT, () => {
 //   });
 
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
   })
-  .then(() => console.log("MongoDB connected"))
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+    console.log("MongoDB connected");
+  })
+
   .catch((err) => console.log("Error connecting to database :-( ", err));
