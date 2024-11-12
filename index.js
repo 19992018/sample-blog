@@ -107,14 +107,23 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+// mongoose
+//   .connect(MONGODB_URI)
+//   .then(() => {
+//     // app.listen(3000, () => {
+//     //   console.log("app running on port 3000... Yeey!");
+//     // });
+//     console.log("successfully connected to database");
+//   })
+//   .catch(() => {
+//     console.log("error connecting to database :-( ...");
+//   });
+
 mongoose
-  .connect(MONGODB_URI)
-  .then(() => {
-    // app.listen(3000, () => {
-    //   console.log("app running on port 3000... Yeey!");
-    // });
-    console.log("successfully connected to database");
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
   })
-  .catch(() => {
-    console.log("error connecting to database :-( ...");
-  });
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log("Error connecting to database :-( ", err));
