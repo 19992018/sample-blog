@@ -115,17 +115,13 @@ app.get("/delete/:id", async (req, res) => {
 //   .catch(() => {
 //     console.log("error connecting to database :-( ...");
 //   });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 mongoose
-  .connect(db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
-  })
+  .connect(db)
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
     console.log("MongoDB connected");
   })
 
