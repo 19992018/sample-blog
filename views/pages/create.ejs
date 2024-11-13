@@ -7,17 +7,26 @@
     <div class="container">
       <%- include('../partials/header'); %>
       <form action="/" method="post">
-        <h1>Create Post</h1>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="Title" /><br />
-        <label for="createPost"></label>
-        <textarea
-          placeholder="Start writing"
-          id="content"
-          name="content"
-          style="height: 200px; width: 80%"
-        ></textarea
-        ><br />
+        <h1 class="form">Create Post</h1>
+        <div class="form-input">
+          <div class="label"><label for="title">Title: </label></div>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Title"
+          /><br />
+        </div>
+        <div class="form-input">
+          <div class="label"><label for="content">Content:</label></div>
+          <textarea
+            placeholder="Start writing"
+            id="content"
+            name="content"
+            style="height: 200px; width: 80%"
+          ></textarea>
+        </div>
+        <br />
         <button type="submit">Submit</button>
       </form>
 

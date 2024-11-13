@@ -20,12 +20,12 @@ h1, h2, h4, h5, h6 {
 .container {
   max-width: 900px;
   margin: auto;
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
+  border-left: 1px solid #091057;
+  border-right: 1px solid #091057;
 }
 
 header {
-  background-color: #333;
+  background-color: #091057;
   display: flex;
   justify-content: space-between;
 
@@ -63,6 +63,7 @@ section {
 main {
   float: left;
   width: 70%;
+  padding: 15px;
 }
 
 main p {
@@ -74,12 +75,17 @@ main p {
 aside {
   float: right;
   width: 25%;
+  padding: 5px;
+}
+
+aside h3 {
+  margin-top: 20px;
 }
 
 aside p {
   font-size: 1.1rem;
   line-height: 1.6rem;
-  padding: 20px;
+  padding: 0 20px 0 20px;
 }
 
 aside ul {
@@ -92,10 +98,14 @@ aside ul li {
   list-style: none;
 }
 
+aside ul li a:hover {
+  color: #7FA1C3;
+}
+
 footer {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #091057;
   align-items: center;
   flex-direction: column;
 
@@ -118,9 +128,57 @@ footer a:hover {
   color: cyan;
 }
 
-/* Edit page */
-/* Added for testing and debugging purposes */
+/* Create Page */
+form {
+  margin: 0 20px 10px 20px;
+}
 
-.h1-editpg {
-  color: purple;
+h1.form {
+  color: #091057;
+  padding: 15px 0;
+}
+
+.form-input {
+  margin: 8px 0;
+}
+
+.label {
+  width: 75px;
+  padding: 4px 0;
+}
+
+label textarea {
+  vertical-align: top;
+}
+
+textarea, input {
+  padding: 5px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+textarea {
+  font-family: sans-serif;
+}
+
+button {
+  padding: 2px 4px;
+  background-color: #091057;
+  color: #fff;
+  display: flex;
+  align-items: start;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    float: none;
+    width: 100%;
+  }
+
+  aside {
+    float: none;
+    width: 100%;
+  }
 }
