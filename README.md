@@ -1,8 +1,10 @@
 
-
 # the-paragraph
-A blog website. Implemented using: HTML, CSS, JS, EJS, Mongo DB, Express and NodeJS
-This sample blog is called The Paragraph
+A blog website. Implemented using: HTML, CSS, JS, EJS, Mongo DB, Express and NodeJS.\
+This sample blog is called The Paragraph\
+You can view and test out the blog website on: https://agile-peak-40167-43d354ef6327.herokuapp.com 
+
+NB: Don't mind the front-end. This project started out as a front-end project but became a backend practice platform. I might make updates to the frontend later. The main purpose of this project was to test out CRUD and that works :-)
 
 
 ## How I maneouvered
@@ -133,5 +135,6 @@ app.post("/", async function (req, res) {
 });
 ```
 
-  NB: Don't mind the front-end. This project started out as a front-end project but became a backend practice platform. I might make updates to the frontend later  
+  
+
 
