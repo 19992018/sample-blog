@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 const { Article } = require("./models/article.model.js");
 const bodyParser = require("body-parser");
 const path = require("path");
-const MONGO_URL = process.env.MONGO_URL;
+const db = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3000;
 
 // const { urlencoded } = require("body-parser");
 
@@ -99,18 +100,29 @@ app.get("/delete/:id", async (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3000, () => {
-  console.log("app running on port 3000... Yeey!");
+// app.listen(3000, () => {
+//   console.log("app running on port 3000... Yeey!");
+// });
+
+// mongoose
+//   .connect(MONGODB_URI)
+//   .then(() => {
+//     // app.listen(3000, () => {
+//     //   console.log("app running on port 3000... Yeey!");
+//     // });
+//     console.log("successfully connected to database");
+//   })
+//   .catch(() => {
+//     console.log("error connecting to database :-( ...");
+//   });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    // app.listen(3000, () => {
-    //   console.log("app running on port 3000... Yeey!");
-    // });
-    console.log("successfully connected to database");
+    console.log("MongoDB connected");
   })
-  .catch(() => {
-    console.log("error connecting to database :-( ...");
-  });
+
+  .catch((err) => console.log("Error connecting to database :-( ", err));

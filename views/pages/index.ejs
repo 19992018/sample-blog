@@ -21,20 +21,25 @@
 
       <aside class="">
         <h3>About</h3>
+        <p>Greetings,</p>
+
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-          et, doloribus? Iure vitae quis officiis atque, alias vel id doloribus
-          nam delectus inventore. Sit doloremque quod alias? Nostrum, impedit,
-          reprehenderit!
+          Welcome oh welcome to my personal blog. I'll probably use this blog to
+          post personal content about my progress in Web dev. I shall also be
+          posting other stuff such as my cooking, travels, learnings and other
+          stuff I do often. Thanks for stopping by and stay tuned <3.
         </p>
 
         <h3>Recent Posts</h3>
         <ul>
-          <li><a href="#">Blog Post #5</a></li>
+          <!-- <li><a href="#">Blog Post #5</a></li>
           <li><a href="#">Blog Post #4</a></li>
           <li><a href="#">Blog Post #3</a></li>
           <li><a href="#">Blog Post #2</a></li>
-          <li><a href="#">Blog Post #1</a></li>
+          <li><a href="#">Blog Post #1</a></li> -->
+          <% articles.forEach(article => { %>
+          <li><a href="#"><%= article.title %></a></li>
+          <% }); %>
         </ul>
       </aside>
 
