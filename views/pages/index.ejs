@@ -10,10 +10,13 @@
       <main>
         <ul>
           <% articles.forEach(article => { %>
-          <h1>
-            <%= article.title %> <a href="/edit/<%= article._id %>">Edit</a>
-            <a href="/delete/<%= article._id %>">Delete</a>
-          </h1>
+          <a href="/post/<%= article._id %>">
+            <h1><%= article.title %></h1>
+          </a>
+          <h3>
+            <a class="ed-del" href="/edit/<%= article._id %>">Edit</a>
+            <a class="ed-del" href="/delete/<%= article._id %>">Delete</a>
+          </h3>
           <p><%= article.content %></p>
           <% }); %>
         </ul>

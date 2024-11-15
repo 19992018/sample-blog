@@ -36,13 +36,24 @@ app.get("/", async function (req, res) {
   }
 });
 
+// Route to display one post
+app.get("/post/:id", async (req, res) => {
+  try {
+    const post = await Article.findById(req.params.id);
+    res.render("pages/post", { post: post });
+  } catch (err) {
+    console.error("Error fetching post:", err);
+    res.status(500).send("Error fetching post");
+  }
+});
+
 //renders the create page
 app.get("/create", function (req, res) {
   res.render("pages/create");
 });
 
 //at create page, we have set the form to post to / route
-//so post method is userd to create
+//so post method is used to create
 // we then res.redirect to home page, where all content is rendered
 app.post("/", async function (req, res) {
   await Article.create({

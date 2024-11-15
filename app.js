@@ -1,3 +1,5 @@
+// This file is not needed by/ connected to anny other
+// I might delete it later
 let ejs = require("ejs");
 let paragraph = {
   pianistText: "We have a wide range of pianists ready to serve you",
